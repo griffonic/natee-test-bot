@@ -66,11 +66,20 @@ $jsonData = '{
     },
     "message":{
         "text":"'.$message_to_reply.'"
+    },
+    "attachment":{
+      "type":"image", 
+      "payload":{
+        "url":"http://static.tvtropes.org/pmwiki/pub/images/anime_font_b_detective_b_font_font_b_conan_b_font_case_closed_font_b_edogawa.jpg", 
+        "is_reusable":true
+      }
     }
+
 }';
 //Encode the array into JSON.
 $jsonDataEncoded = $jsonData;
 //Tell cURL that we want to send a POST request.
+
 curl_setopt($ch, CURLOPT_POST, 1);
 //Attach our encoded JSON string to the POST fields.
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
